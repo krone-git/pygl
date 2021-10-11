@@ -1,0 +1,63 @@
+from .transform3 import Transform3D
+from ..matrix.matrix3.math import mul_mat_mat3, imul_mat_mat3
+
+
+class Matrix3DTransform:
+    scale = lambda mat, s: mul_mat_mat3(mat, Transform3D.scale_mat(s))
+    scale_xyz = lambda mat, x, y, z: mul_mat_mat3(mat, Transform3D.scale_xyz_mat(x, y, z))
+    scale_xy = lambda mat, x, y: mul_mat_mat3(mat, Transform3D.scale_xy_mat(x, y))
+    scale_xz = lambda mat, x, z: mul_mat_mat3(mat, Transform3D.scale_xz_mat(x, z))
+    scale_x = lambda mat, x: mul_mat_mat3(mat, Transform3D.scale_x_mat(x))
+    scale_yz = lambda mat, y, z: mul_mat_mat3(mat, Transform3D.scale_yz_mat(y, z))
+    scale_y = lambda mat, y: mul_mat_mat3(mat, Transform3D.scale_y_mat(y))
+    scale_z = lambda mat, z: mul_mat_mat3(mat, Transform3D.scale_z_mat(z))
+
+    iscale = lambda mat, s: imul_mat_mat3(mat, Transform3D.scale_mat(s))
+    iscale_xyz = lambda mat, x, y, z: imul_mat_mat3(mat, Transform3D.scale_xyz_mat(x, y, z))
+    iscale_xy = lambda mat, x, y: imul_mat_mat3(mat, Transform3D.scale_xy_mat(x, y))
+    iscale_xz = lambda mat, x, z: imul_mat_mat3(mat, Transform3D.scale_xz_mat(x, z))
+    iscale_x = lambda mat, x: imul_mat_mat3(mat, Transform3D.scale_x_mat(x))
+    iscale_yz = lambda mat, y, z: imul_mat_mat3(mat, Transform3D.scale_yz_mat(y, z))
+    iscale_y = lambda mat, y: imul_mat_mat3(mat, Transform3D.scale_y_mat(y))
+    iscale_z = lambda mat, z: imul_mat_mat3(mat, Transform3D.scale_z_mat(z))
+
+    rotate_x = lambda mat, deg: mul_mat_mat3(mat, Transform3D.rotate_x_mat_deg(deg))
+    rotate_x_90 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_X_90_MAT)
+    rotate_x_180 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_X_180_MAT)
+    rotate_x_270 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_X_270_MAT)
+    irotate_x = lambda mat, deg: imul_mat_mat3(mat, Transform3D.rotate_x_mat_deg(deg))
+    irotate_x_90 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_X_90_MAT)
+    irotate_x_180 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_X_180_MAT)
+    irotate_x_270 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_X_270_MAT)
+
+    rotate_y = lambda mat, deg: mul_mat_mat3(mat, Transform3D.rotate_y_mat_deg(deg))
+    rotate_y_90 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Y_90_MAT)
+    rotate_y_180 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Y_180_MAT)
+    rotate_y_270 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Y_270_MAT)
+    irotate_y = lambda mat, deg: imul_mat_mat3(mat, Transform3D.rotate_y_mat_deg(deg))
+    irotate_y_90 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Y_90_MAT)
+    irotate_y_180 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Y_180_MAT)
+    irotate_y_270 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Y_270_MAT)
+
+    rotate_z = lambda mat, deg: mul_mat_mat3(mat, Transform3D.rotate_z_mat_deg(deg))
+    rotate_z_90 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Z_90_MAT)
+    rotate_z_180 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Z_180_MAT)
+    rotate_z_270 = lambda mat: mul_mat_mat3(mat, Transform3D.ROTATE_Z_270_MAT)
+    irotate_z = lambda mat, deg: imul_mat_mat3(mat, Transform3D.rotate_z_mat_deg(deg))
+    irotate_z_90 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Z_90_MAT)
+    irotate_z_180 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Z_180_MAT)
+    irotate_z_270 = lambda mat: imul_mat_mat3(mat, Transform3D.ROTATE_Z_270_MAT)
+
+    reflect_x = lambda mat: mul_mat_mat3(mat, Transform3D.REFLECT_X_MATRIX)
+    reflect_y = lambda mat: mul_mat_mat3(mat, Transform3D.REFLECT_Y_MATRIX)
+    reflect_z = lambda mat: mul_mat_mat3(mat, Transform3D.REFLECT_Z_MATRIX)
+    ireflect_x = lambda mat: imul_mat_mat3(mat, Transform3D.REFLECT_X_MATRIX)
+    ireflect_y = lambda mat: imul_mat_mat3(mat, Transform3D.REFLECT_Y_MATRIX)
+    ireflect_z = lambda mat: imul_mat_mat3(mat, Transform3D.REFLECT_Z_MATRIX)
+
+    shear_x = lambda mat, y, z: mul_mat_mat3(mat, Transform3D.shear_x_mat(y, z))
+    shear_y = lambda mat, x, z: mul_mat_mat3(mat, Transform3D.shear_y_mat(x, z))
+    shear_z = lambda mat, x, y: mul_mat_mat3(mat, Transform3D.shear_z_mat(x, y))
+    ishear_x = lambda mat, y, z: imul_mat_mat3(mat, Transform3D.shear_x_mat(y, z))
+    ishear_y = lambda mat, x, z: imul_mat_mat3(mat, Transform3D.shear_y_mat(x, z))
+    ishear_z = lambda mat, x, y: imul_mat_mat3(mat, Transform3D.shear_z_mat(x, y))

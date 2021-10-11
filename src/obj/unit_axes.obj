@@ -1,0 +1,24 @@
+# unit_axes.obj
+
+# origin
+v 0.0 0.0 0.0 1.0
+
+# ihat
+v 1.0 0.0 0.0 1.0
+
+# jhat
+v 0.0 1.0 0.0 1.0
+
+# khat
+v 0.0 0.0 1.0 1.0
+# 4 vertices
+
+g ihat
+f 1 2 2
+
+g jhat
+f 1 3 3
+
+g khat
+f 1 4 4
+#3 faces
