@@ -74,11 +74,9 @@ if __name__ == "__main__":
             ]
         )
 
-    shape_path = ObjectFileHandler.source_path("unit_hexahedron.obj")
+    shape_path = ObjectFileHandler.source_path("unit_octahedron.obj")
     shape_triangles = ObjectFileReader.read_triangles(shape_path)
     shape = Shape.from_triangles(shape_triangles, face_kwargs={"shader": shader.callback})
-
-    print(*shape_triangles, sep="\n")
 
     shapes = [
         shape,
